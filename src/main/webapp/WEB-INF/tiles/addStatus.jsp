@@ -53,6 +53,7 @@
 
         </div>
     </div>
+</div>
 
 <%--
     &lt;%&ndash;This is the Script for TinyMCE &ndash;%&gt;

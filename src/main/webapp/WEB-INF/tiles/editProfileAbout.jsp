@@ -15,35 +15,23 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <div class="panel-title">Edit status update</div>
+                <div class="panel-title">Edit your about text</div>
             </div>
 
             <%--This is now a Spring Form --%>
             <%--This command name (or ModelAttribute) tells the form where to find the object to fill --%>
-            <form:form modelAttribute="statusUpdate">
-
-                <%--These two hidden fields are needed to submit back the ID and Date for the updated Status--%>
-                <form:input type="hidden" path="id" />
-                <form:input type="hidden" path="added" />
-
-                <div class="errors">
-                        <%--This line of code will show any errors on the field named "text" (path).--%>
-                    <form:errors path="text"/>
-                            <form:errors path="id"/>
-                            <form:errors path="added"/>
-                </div>
+            <form:form modelAttribute="profile">
 
                 <div class="form-group">
                         <%--Path = "text" declares the property we're going to use to store the data.--%>
                         <%--we've got a property named "text" on our class.--%>
-                    <form:textarea path="text" name="text" rows="10" cols="50"></form:textarea>
+                    <form:textarea path="about" name="about" rows="10" cols="50"></form:textarea>
                 </div>
-                <input type="submit" class="btn btn-success" name="submit" value="Update Status"/>
+                <input type="submit" class="btn btn-success" name="submit" value="Update Profile Description"/>
             </form:form>
         </div>
 
     </div>
-
 </div>
 
 <%--

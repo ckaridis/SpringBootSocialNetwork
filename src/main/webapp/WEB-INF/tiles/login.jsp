@@ -59,13 +59,5 @@
         </div>
 
     </div>
+</div>
 
-    <%--
-        &lt;%&ndash;This is the Script for TinyMCE &ndash;%&gt;
-        <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-        <script>
-            tinymce.init({
-                selector: 'textarea',
-                plugins: "link"
-            });
-        </script>--%>

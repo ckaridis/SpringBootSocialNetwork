@@ -56,3 +56,26 @@ textarea {
     margin-top:50px;
 }
 
+.profile-about {
+    width: 100%;
+    border: 1px solid gray;
+    padding: 50px;
+    overflow: auto;
+}
+
+.profile-text {
+    font-size: larger;
+}
+
+.profile-image {
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.profile-about-edit {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+

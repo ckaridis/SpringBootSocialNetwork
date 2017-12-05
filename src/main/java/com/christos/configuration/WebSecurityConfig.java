@@ -54,6 +54,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/viewStatus"
                 )
                 .hasAnyRole("ADMIN")
+                .antMatchers(                   // This will be accessible only by authenticated users.
+                        "/profile",
+                        "/editProfileAbout"
+                )
+                .authenticated()
                 .anyRequest()                   // Any other request
                 .denyAll()                      // Will be denied. Redirected to Login Screen
                 .and()
