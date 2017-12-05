@@ -1,0 +1,58 @@
+.navbar{
+    background-color: #d1f7f9;
+}
+.navbar > .container-fluid > .navbar-nav > li > a {
+    background: none;
+    color: black;
+    font-weight: bold;
+}
+
+.panel > .panel-heading {
+    background-color: aliceblue;
+    /*font-weight: bold;*/
+}
+
+textarea {
+    width: 100%;
+}
+
+.errors {
+    color: firebrick;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.homepage-status {
+    text-align: center;
+    margin-top: 30px;
+    font-size: larger;
+}
+
+.navbar-default .navbar-nav > .open > a {
+    background: none !important;
+    color: #d1f7f9;
+}
+
+.edit-links {
+    margin-top: 10px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-form > div {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.message{
+    font-size:larger;
+    margin-top:50px;
+}
+
