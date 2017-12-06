@@ -4,13 +4,17 @@ import com.christos.model.Profile;
 import com.christos.model.SiteUser;
 import com.christos.service.ProfileService;
 import com.christos.service.UserService;
+import org.owasp.html.PolicyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 // This is the controller for the profile pages.
 @Controller
@@ -22,6 +26,9 @@ public class ProfileController {
 
     @Autowired
     ProfileService profileService;
+
+    @Autowired
+    PolicyFactory htmlPolicy;
 
     private SiteUser getUser() {
 
@@ -71,6 +78,24 @@ public class ProfileController {
 
         modelAndView.getModel().put("profile", webProfile);
         modelAndView.setViewName("app.editProfileAbout");
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/editProfileAbout", method = RequestMethod.POST)
+    public ModelAndView editProfileAbout(ModelAndView modelAndView, @Valid Profile webProfile, BindingResult result) {
+
+        modelAndView.setViewName("app.editProfileAbout");
+
+        SiteUser user = getUser();
+        Profile profile = profileService.getUserProfile(user);
+
+        profile.safeMergeFrom(webProfile, htmlPolicy);
+
+        if (!result.hasErrors()) {
+            profileService.save(profile);
+            modelAndView.setViewName("redirect:/profile");
+        }
 
         return modelAndView;
     }

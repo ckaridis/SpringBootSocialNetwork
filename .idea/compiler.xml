@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboottutorial" />
+        <module name="springsocialnetwork" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springboottutorial" target="1.8" />
+      <module name="springsocialnetwork" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

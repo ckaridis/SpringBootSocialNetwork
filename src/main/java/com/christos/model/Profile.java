@@ -1,6 +1,9 @@
 package com.christos.model;
 
+import org.owasp.html.PolicyFactory;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "profile")
@@ -17,6 +20,7 @@ public class Profile {
     private SiteUser user;
 
     @Column(name = "about", length = 5000, nullable = true)
+    @Size(max = 5000, message = "{editprofile.about.size}")
     private String about;
 
     public Long getId() {
@@ -52,5 +56,12 @@ public class Profile {
             this.about = other.about;
         }
 
+    }
+
+    // This is for saving the edited "about" section of our profile
+    public void safeMergeFrom(Profile webProfile, PolicyFactory htmlPolicy) {
+        if (webProfile.about != null) {
+            this.about = htmlPolicy.sanitize(webProfile.about);
+        }
     }
 }

@@ -18,9 +18,12 @@
                 <div class="panel-title">Edit your about text</div>
             </div>
 
+            <form:errors path="profile.*" cssClass="alert alert-danger fade in" element="div"/>
+
             <%--This is now a Spring Form --%>
             <%--This command name (or ModelAttribute) tells the form where to find the object to fill --%>
             <form:form modelAttribute="profile">
+
 
                 <div class="form-group">
                         <%--Path = "text" declares the property we're going to use to store the data.--%>
@@ -34,12 +37,13 @@
     </div>
 </div>
 
-<%--
+
     &lt;%&ndash;This is the Script for TinyMCE &ndash;%&gt;
     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: "link"
+            /*plugins: "link"*/
         });
-    </script>--%>
+    </script>
+

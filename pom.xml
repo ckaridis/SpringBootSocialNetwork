@@ -102,6 +102,13 @@
             <version>2.1.5.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.googlecode.owasp-java-html-sanitizer/owasp-java-html-sanitizer -->
+        <dependency>
+            <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+            <artifactId>owasp-java-html-sanitizer</artifactId>
+            <version>20171016.1</version>
+        </dependency>
+
 
     </dependencies>
     <packaging>war</packaging>
